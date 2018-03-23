@@ -1,0 +1,320 @@
+/* Base Stuff */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img {
+    max-width: 100%;
+}
+body {
+    background: #f8fbff;
+    transition: background 5s ease;
+}
+body.turn-the-lights-off {
+    background: #020d1b;
+}
+a {
+    transition: all 225ms ease;
+}
+h1 {
+    font-size: 7rem;
+}
+h2, h3, h4 {
+    margin-top: 4rem;
+}
+h4 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+}
+
+
+/* Hero Stuff */
+.hero {
+    margin: 5rem 0 1rem;
+    text-align: center;
+}
+.hero h4 {
+    margin-bottom: 0;
+}
+.hero h4 span {
+    letter-spacing: -0.3rem;
+}
+
+
+/* Article Stuff */
+article .container {
+    padding: 3rem;
+    background: #fff;
+    box-shadow: 0 0 2px #e2ebfd
+}
+article img {
+    max-width: 100%;
+    margin-top: 4rem;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(34, 34, 34, 0.5);
+}
+
+
+
+/* Sidebar */
+.sidebar h4 {
+    margin-top: 0;
+}
+.sidebar form {
+    margin: 0;
+}
+.sidebar input[type="email"],
+.sidebar input[type="text"],
+.sidebar textarea,
+.sidebar select,
+.sidebar button {
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+
+
+
+/* Utility Classes */
+.super-bold {
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: underline;
+    color: #f75388;
+    letter-spacing: 0.5em;
+    background: rgba(226, 249, 29, 0.1);
+}
+.heartify {
+    animation: heartify 600ms infinite alternate;
+    color: pink;
+}
+@keyframes heartify {
+    from { transform: scale(0.7); }
+    from { transform: scale(0.8); }
+}
+img.hide-me {
+    display: none !important;
+}
+
+
+
+
+/* Preview for Form */
+.letter-preview {
+    background: #f1e8f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    color: #888e9a;
+    font-size: 80%;
+
+    animation-duration: 625ms;
+    animation-fill-mode: both;
+    animation-name: fade-in-down;
+
+    display: none;
+}
+.letter-preview.show-me { display: block; }
+.letter-preview h4 { margin-bottom: 0; }
+.fade-in-down {
+    animation-duration: 225ms;
+    animation-fill-mode: both;
+    animation-name: fade-in-down;
+}
+@keyframes fade-in-down {
+    0% {
+        opacity: 0.5;
+        transform: translate3d(0, -5%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+/*==================================
+=            TWEET CODE            =
+==================================*/
+.tweet {
+    background: #f7f7f7;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.tweets i {
+    color: #0084b4;
+    font-size: 25px;
+}
+.tweets p {
+    font-style: italic;
+    color: #0084b4;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.tweets p a {
+    font-weight: 700;
+}
+.tweets h4 {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: -0.025rem;
+}
+
+
+
+
+
+
+
+/*==================================
+=            SECRET NAV            =
+==================================*/
+.secret-nav {
+    background: #684dff;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 240px;
+    transition: all 600ms ease;
+}
+.secret-nav ul {
+    list-style: none;
+}
+
+.secret-nav ul a {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+}
+article .container {
+    position: relative;
+    overflow: hidden;
+}
+.show-nav .secret-nav {
+    transform: translateX(-100%);
+}
+
+
+
+
+
+
+
+
+
+/*====================================
+=            SECRET POPUP            =
+====================================*/
+body.a-secret-popup-is-showing {
+    overflow: hidden;
+}
+.secret-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999;
+    background: rgba(231, 231, 231, 0.97);
+
+    display: none;
+}
+.secret-popup.show-me {
+    display: block;
+}
+.secret-popup .guts-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secret-popup .guts {
+    max-width: 700px;
+    padding: 25px 15px;
+}
+
+/* Handle for the spacing issue! */
+.secret-popup.not-enough-space-panic-mode {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.secret-popup.not-enough-space-panic-mode .guts-wrap {
+    position: relative;
+    height: auto;
+    display: block;
+}
+.secret-popup.not-enough-space-panic-mode .guts {
+    margin: 0 auto;
+}
+
+
+
+/* Styles for Popup */
+.secret-popup.make-dark {
+    background: rgba(2, 11, 25, 0.95);
+    color: #fff;
+}
+.secret-popup.make-fancy {
+    background-image: linear-gradient(35deg, #5c5cff, #ffdbdb);
+}
+
+
+/* Animations for Popup */
+.fade-in-normal {
+    animation: fade-in-normal 600ms;
+}
+@keyframes fade-in-normal {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.scale-in {
+    animation: scale-in 700ms;
+}
+@keyframes scale-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.totally-crazy-dont-do-this-please-no-help {
+    animation: totally-crazy-dont-do-this-please-no-help 1500ms;
+}
+@keyframes totally-crazy-dont-do-this-please-no-help {
+    0% {
+        opacity: 0;
+        border-radius: 100%;
+        transform: skew(50deg) rotate(1000deg) scale(0) translateZ(0);
+    }
+
+    100% {
+        opacity: 1;
+        border-radius: 0;
+        transform: skew(0) rotate(0) scale(1) translateZ(0);
+    }
+}
